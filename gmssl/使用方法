@@ -43,3 +43,14 @@ SSL协议
     TLCP 1.1，支持密码套TLS_ECC_SM4_CBC_SM3 {0xE0,0x13} (GB/T 38636-2020、GM/T 0024-2014)
     TLS 1.2，支持密码套件TLS_ECDHE_SM4_CBC_SM3 {0xE0,0x11} (GB/T 38636-2020、GM/T 0024-2014)
     TLS 1.3，支持密码套件TLS_SM4_GCM_SM3 {0x00,0xC6} (RFC 8998)
+
+
+
+Benchmark
+
+性能测试结果是在单核单线程且未修改处理器默认配置下5次测试中取最好效果。由于未关闭睿频或进行大小核设置，这个成绩通常会略高于多核多线程中每核心的平均成绩。
+
+cmake .. -DENABLE_TEST_SPEED=ON
+make
+./bin/sm4test; ./bin/sm3test; ./bin/sm2_signtest; ./bin/sm2_enctest; ./bin/sm9test; ./bin/zuctest
+
