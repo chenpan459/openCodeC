@@ -1,3 +1,9 @@
+技术文章地址：
+Nginx 源码：https://www.kancloud.cn/digest/understandingnginx/202599
+社区：https://www.nginx.org.cn/
+
+
+
 Nginx 作为一个高性能的 HTTP 服务器和反向代理服务器，可以处理大文件上传并将其转发到后端服务器。处理大文件上传时，
 Nginx 会将文件存储在临时目录中，然后再将其转发到后端服务器。
 
