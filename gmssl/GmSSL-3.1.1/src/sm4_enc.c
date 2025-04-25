@@ -47,6 +47,10 @@ ROUND_TBOX 是基于 T 盒（Tweak Box）的实现方式。T 盒是一种优化�
     ROUND_TBOX：
         适用于对性能要求较高的场景，例如服务器端加密。
         适用于硬件实现，可以进一步提高加密速度。
+
+
+ROUND_TBOX技术论文：https://html.rhhz.net/ZGKXYDXXB/20180205.htm
+
 **************************/
 
 #include <gmssl/sm4.h>
