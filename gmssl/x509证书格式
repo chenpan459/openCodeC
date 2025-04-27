@@ -1,0 +1,57 @@
+证书属于密文基于base64编码的字符串，以-----BEGIN CERTIFICATE-----开头，以-----END CERTIFICATE-----结尾。
+
+Certificate
+    tbsCertificate
+        version: v3 (2)
+        serialNumber: 69E2FEC0170AC67B
+        signature
+            algorithm: sm2sign-with-sm3
+            parameters: NULL
+        issuer
+            countryName: CN
+            organizationName: NRCAC
+            commonName: ROOTCA
+        validity
+            notBefore: Fri Jul 13 20:11:59 2012
+            notAfter: Sun Jul  6 20:11:59 2042
+        subject
+            countryName: CN
+            organizationName: NRCAC
+            commonName: ROOTCA
+        subjectPulbicKeyInfo
+            algorithm
+                algorithm: ecPublicKey
+                namedCurve: sm2p256v1
+            subjectPublicKey
+                ECPoint: 0430F09C6BAA6681C721B137F652705E2FDAEDA789F0FA2B64D4ACEB99B9EAA34E655309309562BEE0E22BB45740AA745357B43DBF586D92FE364EC22EB73775DB
+        extensions
+            Extension
+                extnID: AuthorityKeyIdentifier (2.5.29.35)
+                AuthorityKeyIdentifier
+                    keyIdentifier: 4C32B197D9331BC4A605C1C6E58B625BF0977658
+            Extension
+                extnID: BasicConstraints (2.5.29.19)
+                BasicConstraints
+                    cA: true
+            Extension
+                extnID: KeyUsage (2.5.29.15)
+                KeyUsage: keyCertSign,cRLSign
+            Extension
+                extnID: SubjectKeyIdentifier (2.5.29.14)
+                SubjectKeyIdentifier: 4C32B197D9331BC4A605C1C6E58B625BF0977658
+    signatureAlgorithm
+        algorithm: sm2sign-with-sm3
+        parameters: NULL
+    signatureValue: 304502201B56D22DE397A77A01F07EDBE775BE08A38F9763E49E6584ABF94C86D9F6E479022100DA1C3816C5616D9C2AC18C7D7AFD6DC4CE7EFF53F563A39C48A43A22561B0BC2
+-----BEGIN CERTIFICATE-----
+MIIBszCCAVegAwIBAgIIaeL+wBcKxnswDAYIKoEcz1UBg3UFADAuMQswCQYDVQQG
+EwJDTjEOMAwGA1UECgwFTlJDQUMxDzANBgNVBAMMBlJPT1RDQTAeFw0xMjA3MTQw
+MzExNTlaFw00MjA3MDcwMzExNTlaMC4xCzAJBgNVBAYTAkNOMQ4wDAYDVQQKDAVO
+UkNBQzEPMA0GA1UEAwwGUk9PVENBMFkwEwYHKoZIzj0CAQYIKoEcz1UBgi0DQgAE
+MPCca6pmgcchsTf2UnBeL9rtp4nw+itk1Kzrmbnqo05lUwkwlWK+4OIrtFdAqnRT
+V7Q9v1htkv42TsIutzd126NdMFswHwYDVR0jBBgwFoAUTDKxl9kzG8SmBcHG5Yti
+W/CXdlgwDAYDVR0TBAUwAwEB/zALBgNVHQ8EBAMCAQYwHQYDVR0OBBYEFEwysZfZ
+MxvEpgXBxuWLYlvwl3ZYMAwGCCqBHM9VAYN1BQADSAAwRQIgG1bSLeOXp3oB8H7b
+53W+CKOPl2PknmWEq/lMhtn25HkCIQDaHDgWxWFtnCrBjH16/W3Ezn7/U/Vjo5xI
+pDoiVhsLwg==
+-----END CERTIFICATE-----
