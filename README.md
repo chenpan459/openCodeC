@@ -6,5 +6,7 @@
 密码协商网址：http://www.gmbz.org.cn/main/bzlb.html
 
 SM4参考博客文章：https://www.cnblogs.com/kentle/p/14135865.html
+                https://www.cnblogs.com/kentle/p/15510582.html
+                
 
 
