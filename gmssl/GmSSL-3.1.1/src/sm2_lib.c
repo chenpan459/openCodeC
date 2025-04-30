@@ -858,9 +858,9 @@ int sm2_decrypt(const SM2_KEY *key, const uint8_t *in, size_t inlen, uint8_t *ou
 int sm2_do_ecdh(const SM2_KEY *key, const SM2_POINT *peer_public, SM2_POINT *out)
 {
 	/*
-	if (sm2_point_is_on_curve(peer_public) != 1) {
-		error_print();
-		return -1;
+	if (sm2_point_is_on_curve(peer_public) != 1) { //  检查对端公钥是否在椭圆曲线上
+		error_print(); //  如果不在曲线上，打印错误信息
+		return -1; //  返回-1表示错误
 	}
 	*/
 	if (sm2_point_mul(out, key->private_key, peer_public) != 1) {
@@ -872,21 +872,21 @@ int sm2_do_ecdh(const SM2_KEY *key, const SM2_POINT *peer_public, SM2_POINT *out
 
 int sm2_ecdh(const SM2_KEY *key, const uint8_t *peer_public, size_t peer_public_len, SM2_POINT *out)
 {
-	SM2_POINT point;
+	SM2_POINT point; //  定义一个SM2_POINT类型的变量point，用于存储从octets转换来的点
 
-	if (!key || !peer_public || !peer_public_len || !out) {
+	if (!key || !peer_public || !peer_public_len || !out) { //  检查输入参数是否为空，如果任何一个参数为空，则打印错误并返回-1
 		error_print();
 		return -1;
 	}
-	if (sm2_point_from_octets(&point, peer_public, peer_public_len) != 1) {
+	if (sm2_point_from_octets(&point, peer_public, peer_public_len) != 1) { //  调用sm2_point_from_octets函数，将peer_public转换为SM2_POINT类型     如果转换失败（返回值不为1），则打印错误并返回-1
 		error_print();
 		return -1;
 	}
-	if (sm2_do_ecdh(key, &point, out) != 1) {
+	if (sm2_do_ecdh(key, &point, out) != 1) { //  调用sm2_do_ecdh函数，使用key和point进行ECDH密钥交换，生成共享密钥     如果密钥交换失败（返回值不为1），则打印错误并返回-1
 		error_print();
 		return -1;
 	}
-	return 1;
+	return 1; //  如果所有步骤都成功，返回1表示成功
 }
 
 

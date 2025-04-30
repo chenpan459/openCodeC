@@ -736,52 +736,52 @@ void tls_ctx_cleanup(TLS_CTX *ctx);
 
 
 typedef struct {
-	int protocol;
-	int is_client;
-	int cipher_suites[TLS_MAX_CIPHER_SUITES_COUNT];
-	size_t cipher_suites_cnt;
-	tls_socket_t sock;
+	int protocol; //  定义一个整型变量protocol，用于存储协议类型
+	int is_client; //  定义一个整型变量is_client，用于标识当前是客户端还是服务器端
+	int cipher_suites[TLS_MAX_CIPHER_SUITES_COUNT]; //  定义一个整型数组cipher_suites，用于存储支持的密码套件，数组大小为TLS_MAX_CIPHER_SUITES_COUNT
+	size_t cipher_suites_cnt; //  定义一个size_t类型的变量cipher_suites_cnt，用于存储密码套件的数量
+	tls_socket_t sock; //  定义一个tls_socket_t类型的变量sock，用于存储TLS套接字信息
 
-	uint8_t enced_record[TLS_MAX_RECORD_SIZE];
-	size_t enced_record_len;
+	uint8_t enced_record[TLS_MAX_RECORD_SIZE]; //  定义一个uint8_t数组enced_record，用于存储加密后的TLS记录，数组大小为TLS_MAX_RECORD_SIZE
+	size_t enced_record_len; //  定义一个size_t类型的变量enced_record_len，用于存储加密后的TLS记录的长度
 
 
-	uint8_t record[TLS_MAX_RECORD_SIZE];
+	uint8_t record[TLS_MAX_RECORD_SIZE]; //  定义一个uint8_t数组record，用于存储TLS记录，数组大小为TLS_MAX_RECORD_SIZE
 
 	// 其实这个就不太对了，还是应该有一个完整的密文记录
-	uint8_t databuf[TLS_MAX_PLAINTEXT_SIZE];
-	uint8_t *data;
-	size_t datalen;
+	uint8_t databuf[TLS_MAX_PLAINTEXT_SIZE]; //  定义一个长度为TLS_MAX_PLAINTEXT_SIZE的uint8_t类型数组databuf，用于存储明文数据
+	uint8_t *data; //  定义一个指向uint8_t类型的指针data，用于指向明文数据
+	size_t datalen; //  定义一个size_t类型的变量datalen，用于存储明文数据的长度
 
-	int cipher_suite;
-	uint8_t session_id[32];
-	size_t session_id_len;
-	uint8_t server_certs[TLS_MAX_CERTIFICATES_SIZE]; // 动态的可能会好一点
-	size_t server_certs_len;
-	uint8_t client_certs[TLS_MAX_CERTIFICATES_SIZE];
-	size_t client_certs_len;
-	uint8_t ca_certs[2048];
-	size_t ca_certs_len;
+	int cipher_suite; //  定义一个int类型的变量cipher_suite，用于存储加密套件的标识符
+	uint8_t session_id[32]; //  定义一个长度为32的uint8_t类型数组session_id，用于存储会话ID
+	size_t session_id_len; //  定义一个size_t类型的变量session_id_len，用于存储会话ID的长度
+	uint8_t server_certs[TLS_MAX_CERTIFICATES_SIZE]; // 动态的可能会好一点 //  定义一个长度为TLS_MAX_CERTIFICATES_SIZE的uint8_t类型数组server_certs，用于存储服务器证书
+	size_t server_certs_len; //  定义一个size_t类型的变量server_certs_len，用于存储服务器证书的长度
+	uint8_t client_certs[TLS_MAX_CERTIFICATES_SIZE]; //  定义一个长度为TLS_MAX_CERTIFICATES_SIZE的uint8_t类型数组client_certs，用于存储客户端证书
+	size_t client_certs_len; //  定义一个无符号整型变量，用于存储客户端证书的长度
+	uint8_t ca_certs[2048]; //  定义一个长度为2048字节的数组，用于存储CA证书
+	size_t ca_certs_len; //  定义一个无符号整型变量，用于存储CA证书的长度
 
-	SM2_KEY sign_key;
-	SM2_KEY kenc_key;
+	SM2_KEY sign_key; //  定义一个SM2_KEY类型的变量，用于存储签名密钥
+	SM2_KEY kenc_key; //  定义一个SM2_KEY类型的变量，用于存储加密密钥
 
-	int verify_result;
+	int verify_result; //  定义一个整型变量，用于存储验证结果
 
-	uint8_t master_secret[48];
-	uint8_t key_block[96];
+	uint8_t master_secret[48]; //  定义一个长度为48字节的数组，用于存储主密钥
+	uint8_t key_block[96]; //  定义一个长度为96字节的数组，用于存储密钥块
 
-	SM3_HMAC_CTX client_write_mac_ctx;
-	SM3_HMAC_CTX server_write_mac_ctx;
-	SM4_KEY client_write_enc_key;
-	SM4_KEY server_write_enc_key;
-	uint8_t client_seq_num[8];
-	uint8_t server_seq_num[8];
+	SM3_HMAC_CTX client_write_mac_ctx; //  定义一个SM3_HMAC_CTX类型的变量，用于存储客户端写MAC上下文
+	SM3_HMAC_CTX server_write_mac_ctx; //  定义一个SM3_HMAC_CTX类型的变量，用于存储服务器写MAC上下文
+	SM4_KEY client_write_enc_key; //  定义一个SM4_KEY类型的变量，用于存储客户端写加密密钥
+	SM4_KEY server_write_enc_key; //  定义一个SM4_KEY类型的变量，用于存储服务器写加密密钥
+	uint8_t client_seq_num[8]; //  定义一个长度为8字节的数组，用于存储客户端序列号
+	uint8_t server_seq_num[8]; //  定义一个长度为8字节的数组，用于存储服务器序列号
 
-	uint8_t client_write_iv[12]; // tls13
-	uint8_t server_write_iv[12]; // tls13
-	BLOCK_CIPHER_KEY client_write_key;
-	BLOCK_CIPHER_KEY server_write_key;
+	uint8_t client_write_iv[12]; // tls13 //  定义一个长度为12字节的数组，用于存储客户端写IV（TLS 1.3）
+	uint8_t server_write_iv[12]; // tls13 //  定义一个长度为12字节的数组，用于存储服务器写IV（TLS 1.3）
+	BLOCK_CIPHER_KEY client_write_key; //  定义一个BLOCK_CIPHER_KEY类型的变量，用于存储客户端写密钥
+	BLOCK_CIPHER_KEY server_write_key; //  定义一个BLOCK_CIPHER_KEY类型的变量，用于存储服务器写密钥
 
 } TLS_CONNECT;
 
