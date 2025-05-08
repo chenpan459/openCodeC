@@ -3,12 +3,13 @@ https://github.com/DPDK/dpdk.git
 
 https://core.dpdk.org/download/
 
-RPM 包（适用于 Fedora、CentOS 等）
-
-如果您使用的是基于 RPM 的发行版，可以通过以下链接查找适合您系统的 DPDK RPM 包：
+基于 RPM 的发行版，可以通过以下链接查找适合您系统的 DPDK RPM 包：
     RPM 包搜索：https://rpmfind.net/linux/rpm2html/search.php?query=dpdk
 
 文档与快速入门
 DPDK 提供了丰富的文档资源，包括快速入门指南、API 文档和示例应用程序。
     文档档案：https://core.dpdk.org/doc/archives/
-    
+
+
+ 参考博客文章:
+ https://blog.csdn.net/2401_86353562/article/details/145763350   
