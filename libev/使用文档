@@ -1,0 +1,12 @@
+ 
+ 
+ libev
+
+    描述：另一个高性能事件循环库，接口较底层，比 libuv 更轻量。
+
+    特点：注重性能，API 接口简单直接。
+
+    网址：http://software.schmorp.de/pkg/libev.html
+
+
+    

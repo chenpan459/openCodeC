@@ -1,0 +1,24 @@
+GitHub: https://github.com/ithewei/libhv
+
+作者/组织: ithewei
+
+语言: C/C++
+
+特点:
+
+    类似 libuv 的事件驱动模型，但更轻量、易用。
+
+    内置支持：
+
+        TCP/UDP 客户端与服务端
+
+        HTTP/HTTPS 服务端与客户端（支持 RESTful）
+
+        WebSocket
+
+        定时器、DNS、SSL（基于 OpenSSL）
+
+    支持 Windows/Linux/macOS/Android/iOS/嵌入式
+
+
+    
